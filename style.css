@@ -1,0 +1,1237 @@
+/* ============================================================
+   TUSHAR GAJBHIYE - MODERN TRANSPARENT PORTFOLIO
+   Design Principle: 100% Clean & Transparent UI (No Blur)
+   Background: Interactive 300-Frame Image Sequence Scrubbing Canvas
+============================================================ */
+
+/* CSS Reset & Core Variables */
+:root {
+  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Glass Colors -> Clean Transparent Surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-border-hover: rgba(255, 255, 255, 0.35);
+  --glass-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+  --glass-blur: none;
+  
+  /* Text & Accent Colors */
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.82);
+  --text-dim: rgba(255, 255, 255, 0.6);
+  --accent-color: #ff5277;
+  --accent-glow: rgba(255, 82, 119, 0.4);
+  --accent-cyan: #38ef7d;
+  
+  /* Text Shadows for absolute readability over dynamic background */
+  --text-shadow-heading: 0 2px 14px rgba(0, 0, 0, 0.8);
+  --text-shadow-body: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-main);
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+  background-color: #06050a;
+  color: var(--text-main);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: transparent;
+  color: var(--text-main);
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   FIXED BACKGROUND CANVAS (Image Sequence Scroll Engine)
+============================================================ */
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  pointer-events: none;
+  background-color: #06050a;
+  z-index: -1;
+  image-rendering: high-quality;
+  transform: translateZ(0);
+}
+
+/* Main Content Layer */
+#portfolio-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================================
+   TYPOGRAPHY & GLOBAL STYLES
+============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  font-weight: 700;
+  color: var(--text-main);
+  text-shadow: var(--text-shadow-heading);
+  letter-spacing: -0.02em;
+}
+
+p, span, li, a, label {
+  text-shadow: var(--text-shadow-body);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.text-white-75 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.text-light-80 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.border-white-10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ============================================================
+   GLASSMORPHISM PRIMITIVES (Strictly Clean & Transparent)
+============================================================ */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 20px;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Section Shell (Clean & Fully Transparent) */
+.portfolio-section,
+.hero-section {
+  position: relative;
+  background: transparent !important;
+}
+
+.portfolio-section {
+  padding: 90px 0;
+}
+
+/* Guarantee no blurry backdrop in any section */
+.portfolio-section *,
+.hero-section * {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.section-header {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.section-subtitle {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+  background: rgba(255, 82, 119, 0.1);
+  padding: 4px 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 82, 119, 0.25);
+}
+
+.section-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Glass Icon Box */
+.glass-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover .glass-icon-box {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 82, 119, 0.3);
+}
+
+/* ============================================================
+   NAVBAR (Transparent & Clean)
+============================================================ */
+.glass-navbar {
+  background: rgba(6, 5, 10, 0.4);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 0;
+  transition: all 0.3s ease;
+}
+
+.brand-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.brand-text {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 6px 12px !important;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.glass-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.glass-toggler:focus {
+  box-shadow: none;
+}
+
+/* ============================================================
+   GLASS BUTTONS (Clean & Transparent)
+============================================================ */
+.btn-glass-primary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 0.96rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-glass-primary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.btn-glass-outline {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 0.96rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-glass-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.btn-glass-sm {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-glass-sm:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-glass-outline-sm {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-glass-outline-sm:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+.btn-glass-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-glass-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   1. HERO SECTION (Split Left / Right, Open Center for Video Canvas)
+============================================================ */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 110px;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-left-col {
+  max-width: 500px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-right-col {
+  max-width: 480px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-info-card {
+  border-radius: 18px;
+  position: relative;
+}
+
+.hero-highlights-strip {
+  gap: 10px;
+}
+
+.glass-status-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.status-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+  display: inline-block;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hero-greeting {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.05em;
+}
+
+.hero-title {
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.hero-gradient-text {
+  color: #ffffff;
+  position: relative;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.hero-role-wrapper {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  min-height: 38px;
+}
+
+.role-prefix {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.role-dynamic {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: var(--accent-color);
+  font-weight: 300;
+  animation: blinkCursor 0.9s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-description {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Glass Social Links */
+.glass-social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.glass-social-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   2. ABOUT ME SECTION
+============================================================ */
+.about-text {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.skill-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  font-size: 0.92rem;
+}
+
+.info-label {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+}
+
+.info-value {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.info-value:hover {
+  color: var(--accent-color);
+}
+
+/* Stat Cards */
+.stat-card {
+  padding: 24px 16px;
+}
+
+.stat-icon {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+}
+
+.stat-number {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* ============================================================
+   3. SKILLS SECTION
+============================================================ */
+.skill-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.skill-percentage {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.glass-progress {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.glass-progress-bar {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.95));
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.skill-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.skill-pill:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* ============================================================
+   4. PROJECTS SECTION
+============================================================ */
+.project-card {
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project-img-wrapper {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.project-img-placeholder {
+  height: 240px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-overlay-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge-tag {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.project-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   5. EDUCATION (Glass Timeline)
+============================================================ */
+.glass-timeline {
+  position: relative;
+  padding-left: 36px;
+}
+
+.glass-timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  bottom: 15px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-color), rgba(255, 255, 255, 0.15));
+}
+
+.timeline-card {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-card:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -32px;
+  top: 28px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 12px var(--accent-color);
+  z-index: 2;
+}
+
+.timeline-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  background: rgba(255, 82, 119, 0.12);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 82, 119, 0.3);
+}
+
+.timeline-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.timeline-institution {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.timeline-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   6. EXPERIENCE & ACHIEVEMENTS
+============================================================ */
+.experience-date-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  background: rgba(255, 82, 119, 0.12);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 82, 119, 0.25);
+}
+
+.experience-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.skill-tag-sm {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.appreciation-img-box {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.appreciation-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.appreciation-thumb:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   7. CONTACT SECTION
+============================================================ */
+.contact-channel-card {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.contact-channel-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(4px);
+}
+
+.channel-label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.channel-val {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Floating Glass Inputs */
+.glass-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 6px;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  outline: none;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================================
+   SKILLS CATEGORIES (Structured & Modern)
+============================================================ */
+.skill-category-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.skill-tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.skill-tag-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.skill-tag-item i {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+/* ============================================================
+   TECHNICAL EXPERTISE & APPROACH
+============================================================ */
+.expertise-card {
+  height: 100%;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+}
+
+.approach-card {
+  height: 100%;
+  border-radius: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.approach-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.feature-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.feature-check-item i {
+  color: var(--accent-color);
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   PROJECT DETAILS (Problem / Solution / Key Features)
+============================================================ */
+.project-case-block {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.project-case-label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-case-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+  line-height: 1.45;
+}
+
+.project-key-feature-pill {
+  font-size: 0.74rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.88);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-key-feature-pill i {
+  color: var(--accent-cyan);
+}
+
+/* ============================================================
+   APPRECIATION & RECOGNITION
+============================================================ */
+.appreciation-card,
+.training-card {
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.appreciation-card:hover,
+.training-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.appreciation-thumb-box,
+.training-thumb-box {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  max-height: 260px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.appreciation-thumb,
+.training-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.appreciation-card:hover .appreciation-thumb,
+.training-card:hover .training-thumb {
+  transform: scale(1.05);
+}
+
+.training-pillar-card {
+  height: 100%;
+  border-radius: 16px;
+}
+
+/* ============================================================
+   ACHIEVEMENTS & RECOGNITION
+============================================================ */
+.achievement-card {
+  height: 100%;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.achievement-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  background: rgba(255, 82, 119, 0.12);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 82, 119, 0.25);
+  display: inline-block;
+}
+
+/* ============================================================
+   CERTIFICATIONS & LEARNING
+============================================================ */
+.cert-card {
+  height: 100%;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.cert-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  background: rgba(56, 239, 125, 0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(56, 239, 125, 0.25);
+  display: inline-block;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.glass-footer {
+  background: rgba(6, 5, 10, 0.45);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-badge-sm {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ============================================================
+   RESPONSIVE OPTIMIZATIONS
+============================================================ */
+@media (max-width: 1199.98px) {
+  .hero-section {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  .hero-left-col,
+  .hero-right-col {
+    max-width: 100%;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
+  .section-title {
+    font-size: 2.1rem;
+  }
+  .portfolio-section {
+    padding: 65px 0;
+  }
+  .section-header {
+    margin-bottom: 36px;
+  }
+  .navbar-collapse {
+    background: linear-gradient(135deg, rgba(67, 30, 122, 0.72) 0%, rgba(28, 42, 102, 0.75) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 25px rgba(124, 58, 237, 0.25);
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 12px;
+  }
+  .navbar-collapse .nav-link {
+    padding: 10px 16px !important;
+    border-radius: 10px;
+    margin-bottom: 3px;
+    transition: all 0.2s ease;
+  }
+  .navbar-collapse .nav-link:hover,
+  .navbar-collapse .nav-link.active {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  .hero-role-wrapper {
+    font-size: 1.2rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .portfolio-section {
+    padding: 50px 0;
+  }
+  .section-header {
+    margin-bottom: 28px;
+  }
+  .glass-card {
+    border-radius: 14px;
+  }
+  .glass-card.p-4.p-md-5 {
+    padding: 1.25rem !important;
+  }
+  .glass-timeline {
+    padding-left: 24px;
+  }
+  .timeline-dot {
+    left: -20px;
+    width: 12px;
+    height: 12px;
+  }
+}

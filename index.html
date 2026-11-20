@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tushar Gajbhiye | Software Developer | Python, Django, Gen AI, Java</title>
+  <meta name="description" content="Portfolio of Tushar Gajbhiye - Software Developer specializing in Python, Django, Java, and Generative AI (Gen AI) web applications.">
+
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Glassmorphic Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
+
+  <!-- Background Scroll Animation Canvas -->
+  <canvas id="canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav id="mainNavbar" class="navbar navbar-expand-xl fixed-top glass-navbar">
+      <div class="container-fluid px-3 px-md-5">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <span class="brand-badge">TG</span>
+          <span class="brand-text">Tushar<span class="text-accent">.</span></span>
+        </a>
+
+        <button class="navbar-toggler glass-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars-staggered"></i>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+          <ul class="navbar-nav align-items-xl-center gap-xl-1 my-3 my-xl-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#expertise">Expertise</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#appreciation">Appreciation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-glass-sm ms-xl-3 d-none d-xl-inline-flex">
+            <span>Let's Talk</span>
+            <i class="fas fa-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main id="portfolio-content">
+
+    <!-- 1. HOME / HERO SECTION -->
+    <section id="home" class="hero-section min-vh-100 d-flex align-items-center">
+      <div class="container-fluid px-4 px-md-5 px-xl-5">
+        <div class="row justify-content-between align-items-center gy-5">
+          
+          <!-- Left Column: Identity, Dynamic Role & Primary Action CTAs -->
+          <div class="col-12 col-lg-5 col-xl-4 hero-left-col text-start">
+            
+            <div class="d-inline-flex align-items-center gap-2 glass-status-pill mb-4">
+              <span class="status-indicator-dot"></span>
+              <span>Available for Software Developer Roles</span>
+            </div>
+
+            <p class="hero-greeting mb-2">Hello, I am</p>
+            <h1 class="hero-title mb-3">Tushar <span class="hero-gradient-text">Gajbhiye</span></h1>
+            
+            <div class="hero-role-wrapper mb-4">
+              <span class="role-prefix">I build </span>
+              <span id="roleTypewriter" class="role-dynamic">Full Stack Web Apps</span>
+              <span class="typewriter-cursor">|</span>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 mt-4 pt-1">
+              <a href="#projects" class="btn btn-glass-primary">
+                <i class="fas fa-layer-group me-2"></i>
+                <span>Explore Projects</span>
+              </a>
+              <a href="assets/tushar.pdf" target="_blank" class="btn btn-glass-outline">
+                <i class="fas fa-file-arrow-down me-2"></i>
+                <span>Download Resume</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Center: Open visual aperture for video canvas subject -->
+          <div class="col-xl-3 d-none d-xl-block"></div>
+
+          <!-- Right Column: Bio Summary, Metrics & Social Channels -->
+          <div class="col-12 col-lg-5 col-xl-4 hero-right-col text-start">
+            <div class="hero-info-card glass-card p-4">
+              <div class="d-inline-flex align-items-center gap-2 glass-status-pill mb-3">
+                <i class="fas fa-terminal text-accent"></i>
+                <span>Python, Django, Gen AI & Java Developer</span>
+              </div>
+
+              <p class="hero-description mb-4">
+                Passionate Software Developer based in Nagpur, Maharashtra. Specialized in architecting modern web applications with Python & Django, engineering robust backend systems in Java, and integrating cutting-edge Generative AI (Gen AI) capabilities.
+              </p>
+
+              <!-- Quick Highlights Strip -->
+              <div class="hero-highlights-strip d-flex justify-content-between align-items-center py-3 my-3 border-top border-bottom border-white-10">
+                <div class="text-center flex-fill">
+                  <span class="d-block fw-bold fs-4 text-white">2+</span>
+                  <span class="text-white-75 small">Years Exp.</span>
+                </div>
+                <div class="text-center flex-fill border-start border-end border-white-10">
+                  <span class="d-block fw-bold fs-4 text-white">5+</span>
+                  <span class="text-white-75 small">Projects</span>
+                </div>
+                <div class="text-center flex-fill">
+                  <span class="d-block fw-bold fs-4 text-white">10+</span>
+                  <span class="text-white-75 small">Tech Stack</span>
+                </div>
+              </div>
+
+              <!-- Social Links Strip -->
+              <div class="pt-1">
+                <span class="d-block text-white-75 small mb-2">Connect Across Channels:</span>
+                <div class="d-flex align-items-center gap-2">
+                  <a href="https://github.com/TusharGabhiye" target="_blank" class="glass-social-link" title="GitHub" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/tushar-gajbhiye-543745284/" target="_blank" class="glass-social-link" title="LinkedIn" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="mailto:tushargajbhiye79@gmail.com" class="glass-social-link" title="Email" aria-label="Send Email">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                  <a href="https://www.instagram.com/tushar_gajbhiye___/" target="_blank" class="glass-social-link" title="Instagram" aria-label="Instagram Profile">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://www.facebook.com/tushar.gajbhiye.969/" target="_blank" class="glass-social-link" title="Facebook" aria-label="Facebook Profile">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about" class="portfolio-section">
+      <div class="container">
+        
+        <div class="section-header text-center mb-5">
+          <span class="section-subtitle">Engineering Profile</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row gy-4">
+          <!-- Story Card -->
+          <div class="col-lg-7">
+            <div class="glass-card h-100 p-4 p-md-5">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="glass-icon-box">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div>
+                  <h3 class="card-title mb-1">Software Developer</h3>
+                  <p class="card-subtitle mb-0">Python, Django, Gen AI & Java Engineering</p>
+                </div>
+              </div>
+
+              <p class="about-text mb-3">
+                I am a dedicated <strong>Software Developer</strong> located in <strong>Nagpur, Maharashtra</strong>, with a strong engineering foundation in designing, developing, and deploying full-stack web applications.
+              </p>
+              <p class="about-text mb-3">
+                My core technical toolkit encompasses <strong>Python, Django, Java, Generative AI (Gen AI), HTML5, CSS3, JavaScript, Bootstrap, and MySQL</strong>. Currently contributing as a <strong>Web Developer at Anishree Technologies LLP</strong>, I engineer performant digital solutions, optimize cross-device user experiences, and advance my technical depth through an <strong>M.Tech in Computer Science & Engineering</strong>.
+              </p>
+              <p class="about-text mb-3">
+                Driven by continuous innovation, I have a strong practical focus on <strong>Generative AI (Gen AI)</strong>, prompt engineering, and intelligent AI Agents. I actively explore integrating AI workflows and automated pipelines into modern Python, Django, and Java applications.
+              </p>
+              <p class="about-text mb-4">
+                <!--  Whether engineering robust web platforms in <strong>Python & Django</strong>, developing enterprise backend solutions in <strong>Java</strong>, or integrating <strong>Generative AI</strong> -->
+                I focus on delivering practical, scalable, responsive, and user-friendly products that solve real-world problems.
+              </p>
+
+              <div class="d-flex flex-wrap gap-2 pt-2">
+                <span class="skill-tag"><i class="fab fa-python text-accent me-1"></i> Python & Django</span>
+                <span class="skill-tag"><i class="fab fa-java text-accent me-1"></i> Java Development</span>
+                <span class="skill-tag"><i class="fas fa-robot text-accent me-1"></i> Generative AI (Gen AI)</span>
+                <span class="skill-tag"><i class="fas fa-database text-accent me-1"></i> MySQL & SQL</span>
+                <span class="skill-tag"><i class="fas fa-code text-accent me-1"></i> Clean Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Info & Contact Matrix -->
+          <div class="col-lg-5">
+            <div class="glass-card h-100 p-4 p-md-5">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="glass-icon-box">
+                  <i class="fas fa-id-card"></i>
+                </div>
+                <div>
+                  <h3 class="card-title mb-1">Personal Details</h3>
+                  <p class="card-subtitle mb-0">Professional Summary</p>
+                </div>
+              </div>
+
+              <div class="info-list">
+                <div class="info-row">
+                  <span class="info-label"><i class="fas fa-briefcase me-2 text-accent"></i> Primary Role:</span>
+                  <span class="info-value">Software Developer</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fas fa-laptop-code me-2 text-accent"></i> Core Focus:</span>
+                  <span class="info-value">Python, Django, Gen AI, Java</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fas fa-graduation-cap me-2 text-accent"></i> Education:</span>
+                  <span class="info-value">M.Tech (CSE) & B.E. (IT)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fas fa-envelope me-2 text-accent"></i> Email:</span>
+                  <a href="mailto:tushargajbhiye79@gmail.com" class="info-value text-break">tushargajbhiye79@gmail.com</a>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fas fa-phone me-2 text-accent"></i> Phone:</span>
+                  <a href="tel:+918767914518" class="info-value">+91 87679 14518</a>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fas fa-location-dot me-2 text-accent"></i> Location:</span>
+                  <span class="info-value">Nagpur, Maharashtra, India</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label"><i class="fas fa-circle-check me-2 text-accent"></i> Availability:</span>
+                  <span class="info-value text-success font-weight-bold">Open to Opportunities</span>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-top border-white-10">
+                <a href="assets/tushar.pdf" target="_blank" class="btn btn-glass-primary w-100">
+                  <i class="fas fa-download me-2"></i> Download Full Resume
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Counter Strip -->
+        <div class="row g-4 mt-3">
+          <div class="col-6 col-lg-3">
+            <div class="glass-card stat-card text-center p-4">
+              <div class="stat-icon mb-2"><i class="fas fa-briefcase"></i></div>
+              <h3 class="stat-number"><span class="counter" data-target="2">0</span>+</h3>
+              <p class="stat-label mb-0">Years Experience</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="glass-card stat-card text-center p-4">
+              <div class="stat-icon mb-2"><i class="fas fa-diagram-project"></i></div>
+              <h3 class="stat-number"><span class="counter" data-target="5">0</span>+</h3>
+              <p class="stat-label mb-0">Completed Projects</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="glass-card stat-card text-center p-4">
+              <div class="stat-icon mb-2"><i class="fas fa-layer-group"></i></div>
+              <h3 class="stat-number"><span class="counter" data-target="10">0</span>+</h3>
+              <p class="stat-label mb-0">Technologies & Tools</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="glass-card stat-card text-center p-4">
+              <div class="stat-icon mb-2"><i class="fas fa-award"></i></div>
+              <h3 class="stat-number"><span class="counter" data-target="2">0</span></h3>
+              <p class="stat-label mb-0">Institutional Honors</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. SKILLS SECTION -->
+    <section id="skills" class="portfolio-section">
+      <div class="container">
+        
+        <div class="section-header text-center mb-5">
+          <span class="section-subtitle">Core Proficiencies</span>
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- Row 1: Frontend Development, Backend Development, Database -->
+        <div class="row gy-4 mb-4">
+          
+          <!-- Category 1: Frontend Development -->
+          <div class="col-lg-4">
+            <div class="glass-card skill-category-card p-4 p-md-5">
+              <div class="skill-category-header">
+                <div class="glass-icon-box">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <div>
+                  <h4 class="card-title mb-1">Frontend Development</h4>
+                  <p class="card-subtitle mb-0">Responsive UI, Layouts & Logic</p>
+                </div>
+              </div>
+              <div class="skill-tags-wrapper">
+                <span class="skill-tag-item"><i class="fab fa-html5"></i> HTML5</span>
+                <span class="skill-tag-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+                <span class="skill-tag-item"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="skill-tag-item"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend Development -->
+          <div class="col-lg-4">
+            <div class="glass-card skill-category-card p-4 p-md-5">
+              <div class="skill-category-header">
+                <div class="glass-icon-box">
+                  <i class="fas fa-server"></i>
+                </div>
+                <div>
+                  <h4 class="card-title mb-1">Backend Development</h4>
+                  <p class="card-subtitle mb-0">Python, Django & Java Architecture</p>
+                </div>
+              </div>
+              <div class="skill-tags-wrapper">
+                <span class="skill-tag-item"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-tag-item"><i class="fas fa-cubes"></i> Django</span>
+                <span class="skill-tag-item"><i class="fab fa-java"></i> Java</span>
+                <span class="skill-tag-item"><i class="fas fa-network-wired"></i> RESTful APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Database -->
+          <div class="col-lg-4">
+            <div class="glass-card skill-category-card p-4 p-md-5">
+              <div class="skill-category-header">
+                <div class="glass-icon-box">
+                  <i class="fas fa-database"></i>
+                </div>
+                <div>
+                  <h4 class="card-title mb-1">Database</h4>
+                  <p class="card-subtitle mb-0">Relational Schemas & Queries</p>
+                </div>
+              </div>
+              <div class="skill-tags-wrapper">
+                <span class="skill-tag-item"><i class="fas fa-database"></i> MySQL</span>
+                <span class="skill-tag-item"><i class="fas fa-table"></i> SQL</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row 2: Generative AI + Tools & Technologies -->
+        <div class="row gy-4">
+          
+          <!-- Category 4: Generative AI -->
+          <div class="col-lg-7">
+            <div class="glass-card skill-category-card p-4 p-md-5">
+              <div class="skill-category-header">
+                <div class="glass-icon-box">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div>
+                  <h4 class="card-title mb-1">Generative AI</h4>
+                  <p class="card-subtitle mb-0">Gen AI, Prompt Engineering & AI Agents</p>
+                </div>
+              </div>
+              <div class="skill-tags-wrapper">
+                <span class="skill-tag-item"><i class="fas fa-robot"></i> Generative AI (Gen AI)</span>
+                <span class="skill-tag-item"><i class="fas fa-wand-magic-sparkles"></i> Prompt Engineering</span>
+                <span class="skill-tag-item"><i class="fas fa-users-gear"></i> AI Agents</span>
+                <span class="skill-tag-item"><i class="fas fa-network-wired"></i> AI Workflow Automation</span>
+                <span class="skill-tag-item"><i class="fas fa-chart-pie"></i> Streamlit AI Apps</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 5: Tools & Technologies -->
+          <div class="col-lg-5">
+            <div class="glass-card skill-category-card p-4 p-md-5">
+              <div class="skill-category-header">
+                <div class="glass-icon-box">
+                  <i class="fas fa-wrench"></i>
+                </div>
+                <div>
+                  <h4 class="card-title mb-1">Tools & Technologies</h4>
+                  <p class="card-subtitle mb-0">Workflows, Tooling & Environments</p>
+                </div>
+              </div>
+              <div class="skill-tags-wrapper">
+                <span class="skill-tag-item"><i class="fab fa-git-alt"></i> Git</span>
+                <span class="skill-tag-item"><i class="fab fa-github"></i> GitHub</span>
+                <span class="skill-tag-item"><i class="fas fa-code"></i> VS Code</span>
+                <span class="skill-tag-item"><i class="fas fa-chart-pie"></i> Streamlit</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. TECHNICAL EXPERTISE & DEVELOPMENT APPROACH SECTION -->
+    <section id="expertise" class="portfolio-section">
+      <div class="container">
+        
+        <div class="section-header text-center mb-5">
+          <span class="section-subtitle">Engineering Philosophy</span>
+          <h2 class="section-title">Technical Expertise & Approach</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row gy-4">
+          
+          <!-- Column 1: Technical Expertise -->
+          <div class="col-lg-4">
+            <div class="glass-card expertise-card p-4 p-md-5 h-100 d-flex flex-column">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="glass-icon-box">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <div>
+                  <h4 class="card-title mb-1">Technical Expertise</h4>
+                  <p class="card-subtitle mb-0">Development Specializations</p>
+                </div>
+              </div>
+              
+              <div class="d-flex flex-column gap-3 flex-grow-1">
+                <div class="feature-check-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <strong class="text-white d-block">Python & Django Architecture</strong>
+                    <span class="text-white-75 small">Engineering full-stack web solutions with Python & Django, modular template structures, and clean ORM data management.</span>
+                  </div>
+                </div>
+
+                <div class="feature-check-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <strong class="text-white d-block">Java Backend Engineering</strong>
+                    <span class="text-white-75 small">Designing object-oriented backend services, RESTful API endpoints, and structured database transactions in Java.</span>
+                  </div>
+                </div>
+
+                <div class="feature-check-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <strong class="text-white d-block">Responsive Web Design</strong>
+                    <span class="text-white-75 small">Building fluid, cross-browser interfaces with clean HTML5, CSS3, JavaScript, and Bootstrap for seamless usability.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 pt-3 border-top border-white-10 mt-3">
+                <span class="skill-tag-sm">Python</span>
+                <span class="skill-tag-sm">Django</span>
+                <span class="skill-tag-sm">Java</span>
+                <span class="skill-tag-sm">Gen AI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Development Approach -->
+          <div class="col-lg-4">
+            <div class="glass-card expertise-card p-4 p-md-5 h-100 d-flex flex-column">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="glass-icon-box">
+                  <i class="fas fa-gears"></i>
+                </div>
+                <div>
+                  <h4 class="card-title mb-1">Development Approach</h4>
+                  <p class="card-subtitle mb-0">Core Engineering Principles</p>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column gap-3 flex-grow-1">
+                <div class="feature-check-item">
+                  <i class="fas fa-circle-nodes"></i>
+                  <div>
+                    <strong class="text-white d-block">Clean Code & Modularity</strong>
+                    <span class="text-white-75 small">Adhering to SOLID, DRY, and clean architecture standards to ensure code readability, reusability, and maintainability.</span>
+                  </div>
+                </div>
+
+                <div class="feature-check-item">
+                  <i class="fas fa-circle-nodes"></i>
+                  <div>
+                    <strong class="text-white d-block">Mobile-First & Responsive</strong>
+                    <span class="text-white-75 small">Building mobile-first, cross-browser fluid interfaces that deliver fast loading and intuitive usability on all screen sizes.</span>
+                  </div>
+                </div>
+
+                <div class="feature-check-item">
+                  <i class="fas fa-circle-nodes"></i>
+                  <div>
+                    <strong class="text-white d-block">Problem Solving & Optimization</strong>
+                    <span class="text-white-75 small">Applying data structures, algorithms, and continuous optimization to solve complex business logic efficiently.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 pt-3 border-top border-white-10 mt-3">
+                <span class="skill-tag-sm">Clean Code</span>
+                <span class="skill-tag-sm">Backend Systems</span>
+                <span class="skill-tag-sm">Performance</span>
+                <span class="skill-tag-sm">Scalability</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Technical Interests -->
+          <div class="col-lg-4">
+            <div class="glass-card expertise-card p-4 p-md-5 h-100 d-flex flex-column">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="glass-icon-box">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <div>
+                  <h4 class="card-title mb-1">Technical Interests</h4>
+                  <p class="card-subtitle mb-0">Innovation & Focus Areas</p>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column gap-3 flex-grow-1">
+                <div class="feature-check-item">
+                  <i class="fas fa-wand-magic-sparkles"></i>
+                  <div>
+                    <strong class="text-white d-block">Generative AI (Gen AI) Integration</strong>
+                    <span class="text-white-75 small">Exploring practical applications of Generative AI, prompt engineering patterns, and AI tools in real-world web software.</span>
+                  </div>
+                </div>
+
+                <div class="feature-check-item">
+                  <i class="fas fa-wand-magic-sparkles"></i>
+                  <div>
+                    <strong class="text-white d-block">Python & Django Web Platforms</strong>
+                    <span class="text-white-75 small">Architecting secure, performant web applications with Django ORM, authentication workflows, and REST APIs.</span>
+                  </div>
+                </div>
+
+                <div class="feature-check-item">
+                  <i class="fas fa-wand-magic-sparkles"></i>
+                  <div>
+                    <strong class="text-white d-block">Java Enterprise Systems</strong>
+                    <span class="text-white-75 small">Studying scalable object-oriented architectures, relational database management, and distributed systems.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 pt-3 border-top border-white-10 mt-3">
+                <span class="skill-tag-sm">Python Django</span>
+                <span class="skill-tag-sm">Java</span>
+                <span class="skill-tag-sm">Gen AI</span>
+                <span class="skill-tag-sm">REST APIs</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. EXPERIENCE SECTION -->
+    <section id="experience" class="portfolio-section">
+      <div class="container">
+        
+        <div class="section-header text-center mb-5">
+          <span class="section-subtitle">Professional Journey</span>
+          <h2 class="section-title">Work Experience</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row gy-4">
+          
+          <!-- Role 1: Anishree Technologies LLP - Web Developer -->
+          <div class="col-lg-4">
+            <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="glass-icon-box">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <div>
+                  <span class="experience-date-pill mb-1 d-inline-block">Apr 2025 – Present</span>
+                  <h4 class="card-title mb-0">Web Developer</h4>
+                </div>
+              </div>
+              <h5 class="text-accent mb-3 font-weight-500">Anishree Technologies LLP</h5>
+              <p class="experience-desc flex-grow-1">
+                Leading software development of responsive, client-facing web applications. Building web solutions with Python, Django, and modern frontend technologies (HTML5, CSS3, JavaScript, Bootstrap 5), integrating backend REST APIs, and ensuring high cross-device performance.
+              </p>
+              <div class="mb-3">
+                <span class="text-white-50 small d-block mb-2">Technologies & Scope:</span>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="skill-tag-sm">Python</span>
+                  <span class="skill-tag-sm">Django</span>
+                  <span class="skill-tag-sm">JavaScript</span>
+                  <span class="skill-tag-sm">Bootstrap 5</span>
+                  <span class="skill-tag-sm">REST APIs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 2: Anishree Technologies LLP - Web Developer Intern -->
+          <div class="col-lg-4">
+            <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="glass-icon-box">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <div>
+                  <span class="experience-date-pill mb-1 d-inline-block">Sep 2024 – Mar 2025</span>
+                  <h4 class="card-title mb-0">Web Developer Intern</h4>
+                </div>
+              </div>
+              <h5 class="text-accent mb-3 font-weight-500">Anishree Technologies LLP</h5>
+              <p class="experience-desc flex-grow-1">
+                Engineered intuitive, cross-browser compatible user interfaces, implemented CSS animations, and contributed to core client deliverables. Assisted senior engineers with MySQL database queries, code refactoring, and version-controlled Git workflows.
+              </p>
+              <div class="mb-3">
+                <span class="text-white-50 small d-block mb-2">Technologies & Scope:</span>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="skill-tag-sm">HTML5</span>
+                  <span class="skill-tag-sm">CSS3</span>
+                  <span class="skill-tag-sm">JavaScript</span>
+                  <span class="skill-tag-sm">MySQL</span>
+                  <span class="skill-tag-sm">Git</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 3: Placify - Full Stack Development Intern -->
+          <div class="col-lg-4">
+            <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="glass-icon-box">
+                  <i class="fas fa-code-branch"></i>
+                </div>
+                <div>
+                  <span class="experience-date-pill mb-1 d-inline-block">Jun 2024 – Sep 2024</span>
+                  <h4 class="card-title mb-0">Full Stack Development Intern</h4>
+                </div>
+              </div>
+              <h5 class="text-accent mb-3 font-weight-500">Placify</h5>
+              <p class="experience-desc flex-grow-1">
+                Engineered full-stack web application modules in Java, developed and tested RESTful API endpoints, and designed relational schemas in MySQL. Actively contributed in Agile sprint cycles, code reviews, and software testing procedures.
+              </p>
+              <div class="mb-3">
+                <span class="text-white-50 small d-block mb-2">Technologies & Scope:</span>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="skill-tag-sm">Java</span>
+                  <span class="skill-tag-sm">REST APIs</span>
+                  <span class="skill-tag-sm">MySQL</span>
+                  <span class="skill-tag-sm">Agile</span>
+                  <span class="skill-tag-sm">Git</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. PROJECTS SECTION -->
+    <section id="projects" class="portfolio-section">
+      <div class="container">
+        
+        <div class="section-header text-center mb-5">
+          <span class="section-subtitle">Featured Works</span>
+          <h2 class="section-title">Projects</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row gy-4">
+
+          <!-- Project 1: AT Projects -->
+          <div class="col-lg-6">
+            <div class="glass-card project-card h-100 overflow-hidden d-flex flex-column">
+              <div class="project-img-wrapper">
+                <img src="assets/AT_Proje.png" alt="AT Projects Portal" class="img-fluid project-img" loading="lazy">
+                <div class="project-overlay-badge">Enterprise Portal</div>
+              </div>
+              <div class="p-4 p-md-5 d-flex flex-column flex-grow-1">
+                <div class="project-tags mb-3">
+                  <span class="badge-tag">HTML5</span>
+                  <span class="badge-tag">CSS3</span>
+                  <span class="badge-tag">JavaScript</span>
+                  <span class="badge-tag">Bootstrap 5</span>
+                </div>
+                <h3 class="project-title mb-3">AT Projects – Enterprise Solutions Portal</h3>
+                
+                <!-- Problem / Solution Case Details -->
+                <div class="project-case-block">
+                  <span class="project-case-label"><i class="fas fa-circle-exclamation"></i> Problem</span>
+                  <p class="project-case-text">Enterprises required an integrated, responsive web platform to present complex software services, showcase active projects, and capture potential business inquiries cleanly.</p>
+                </div>
+
+                <div class="project-case-block">
+                  <span class="project-case-label"><i class="fas fa-circle-check"></i> Solution</span>
+                  <p class="project-case-text">Architected a modern, lightweight web application featuring modular service showcases, streamlined interaction flows, and optimized cross-device layout rendering.</p>
+                </div>
+
+                <div class="mb-3">
+                  <span class="text-white-50 small d-block mb-2">Key Features:</span>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Modular UI Components</span>
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Fluid Responsiveness</span>
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Inquiry Form Validation</span>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3 pt-3 border-top border-white-10 mt-auto">
+                  <a href="https://github.com/TusharGabhiye" target="_blank" class="btn btn-glass-sm">
+                    <i class="fab fa-github me-1"></i> Repository
+                  </a>
+                  <a href="#contact" class="btn btn-glass-outline-sm">
+                    <i class="fas fa-circle-info me-1"></i> Inquire
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Travel & Tourism -->
+          <div class="col-lg-6">
+            <div class="glass-card project-card h-100 overflow-hidden d-flex flex-column">
+              <div class="project-img-wrapper">
+                <img src="assets/travel.png" alt="Travel and Tourism Platform" class="img-fluid project-img" loading="lazy">
+                <div class="project-overlay-badge">Full-Stack Application</div>
+              </div>
+              <div class="p-4 p-md-5 d-flex flex-column flex-grow-1">
+                <div class="project-tags mb-3">
+                  <span class="badge-tag">Java</span>
+                  <span class="badge-tag">MySQL</span>
+                  <span class="badge-tag">JavaScript</span>
+                  <span class="badge-tag">Bootstrap</span>
+                </div>
+                <h3 class="project-title mb-3">Travel & Tour Experience Platform</h3>
+                
+                <!-- Problem / Solution Case Details -->
+                <div class="project-case-block">
+                  <span class="project-case-label"><i class="fas fa-circle-exclamation"></i> Problem</span>
+                  <p class="project-case-text">Travelers often encounter scattered destination information, lacking unified itinerary exploration and reliable automated package management.</p>
+                </div>
+
+                <div class="project-case-block">
+                  <span class="project-case-label"><i class="fas fa-circle-check"></i> Solution</span>
+                  <p class="project-case-text">Developed a full-stack platform featuring user authentication, interactive itinerary browsing, and persistent booking management backed by a relational MySQL database.</p>
+                </div>
+
+                <div class="mb-3">
+                  <span class="text-white-50 small d-block mb-2">Key Features:</span>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> User Authentication</span>
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Tour Package Filtering</span>
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Relational Booking Database</span>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3 pt-3 border-top border-white-10 mt-auto">
+                  <a href="https://github.com/TusharGabhiye" target="_blank" class="btn btn-glass-sm">
+                    <i class="fab fa-github me-1"></i> Repository
+                  </a>
+                  <a href="#contact" class="btn btn-glass-outline-sm">
+                    <i class="fas fa-paper-plane me-1"></i> Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Restaurant Website -->
+          <div class="col-lg-6">
+            <div class="glass-card project-card h-100 overflow-hidden d-flex flex-column">
+              <div class="project-img-wrapper">
+                <img src="assets/Rest.png" alt="Restaurant Web Portal" class="img-fluid project-img" loading="lazy">
+                <div class="project-overlay-badge">Interactive Web UI</div>
+              </div>
+              <div class="p-4 p-md-5 d-flex flex-column flex-grow-1">
+                <div class="project-tags mb-3">
+                  <span class="badge-tag">HTML5 / CSS3</span>
+                  <span class="badge-tag">JavaScript</span>
+                  <span class="badge-tag">UI/UX</span>
+                  <span class="badge-tag">Responsive</span>
+                </div>
+                <h3 class="project-title mb-3">Artisan Restaurant & Dining Showcase</h3>
+                
+                <!-- Problem / Solution Case Details -->
+                <div class="project-case-block">
+                  <span class="project-case-label"><i class="fas fa-circle-exclamation"></i> Problem</span>
+                  <p class="project-case-text">Traditional dining businesses struggle with high bounce rates when menus are static and table reservations require slow manual phone calls.</p>
+                </div>
+
+                <div class="project-case-block">
+                  <span class="project-case-label"><i class="fas fa-circle-check"></i> Solution</span>
+                  <p class="project-case-text">Built a mobile-first, high-converting web interface featuring categorized digital menus, chef specials highlights, and streamlined reservation capture.</p>
+                </div>
+
+                <div class="mb-3">
+                  <span class="text-white-50 small d-block mb-2">Key Features:</span>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Categorized Menu Filter</span>
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Online Table Reservations</span>
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Touch-Optimized UI</span>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3 pt-3 border-top border-white-10 mt-auto">
+                  <a href="https://github.com/TusharGabhiye" target="_blank" class="btn btn-glass-sm">
+                    <i class="fab fa-github me-1"></i> Repository
+                  </a>
+                  <a href="#contact" class="btn btn-glass-outline-sm">
+                    <i class="fas fa-arrow-up-right-from-square me-1"></i> Preview
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Doctor Appointment System -->
+          <div class="col-lg-6">
+            <div class="glass-card project-card h-100 overflow-hidden d-flex flex-column">
+              <div class="project-img-placeholder d-flex align-items-center justify-content-center text-center p-4">
+                <div>
+                  <div class="glass-icon-box mx-auto mb-3" style="width: 70px; height: 70px; font-size: 1.8rem;">
+                    <i class="fas fa-heart-pulse"></i>
+                  </div>
+                  <h5 class="text-white mb-1">Healthcare Portal Architecture</h5>
+                  <p class="text-white-50 small mb-0">Full-Stack Scheduling Platform</p>
+                </div>
+              </div>
+              <div class="p-4 p-md-5 d-flex flex-column flex-grow-1">
+                <div class="project-tags mb-3">
+                  <span class="badge-tag">Django / Python</span>
+                  <span class="badge-tag">MySQL</span>
+                  <span class="badge-tag">RESTful APIs</span>
+                  <span class="badge-tag">Bootstrap 5</span>
+                </div>
+                <h3 class="project-title mb-3">Doctor Appointment & Healthcare System</h3>
+                
+                <!-- Problem / Solution Case Details -->
+                <div class="project-case-block">
+                  <span class="project-case-label"><i class="fas fa-circle-exclamation"></i> Problem</span>
+                  <p class="project-case-text">Healthcare clinics encounter double-booking conflicts and delayed patient record retrieval when managing consultations manually.</p>
+                </div>
+
+                <div class="project-case-block">
+                  <span class="project-case-label"><i class="fas fa-circle-check"></i> Solution</span>
+                  <p class="project-case-text">Engineered a robust Django-powered web platform providing doctor discovery, real-time consultation booking, and centralized patient history tracking.</p>
+                </div>
+
+                <div class="mb-3">
+                  <span class="text-white-50 small d-block mb-2">Key Features:</span>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Multi-Role Authentication</span>
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Real-Time Slot Scheduling</span>
+                    <span class="project-key-feature-pill"><i class="fas fa-check"></i> Patient Records Database</span>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3 pt-3 border-top border-white-10 mt-auto">
+                  <a href="https://github.com/TusharGabhiye" target="_blank" class="btn btn-glass-sm">
+                    <i class="fab fa-github me-1"></i> Repository
+                  </a>
+                  <a href="https://github.com/TusharGabhiye" target="_blank" class="btn btn-glass-outline-sm">
+                    <i class="fab fa-github me-1"></i> More on GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. EDUCATION SECTION -->
+    <section id="education" class="portfolio-section">
+      <div class="container">
+        
+        <div class="section-header text-center mb-5">
+          <span class="section-subtitle">Academic Journey</span>
+          <h2 class="section-title">Education</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="glass-timeline">
+
+              <!-- M.Tech -->
+              <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="glass-card p-4 p-md-5">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                    <span class="timeline-badge">2025 – Present</span>
+                    <span class="timeline-status text-accent"><i class="fas fa-spinner fa-spin me-1"></i> In Progress</span>
+                  </div>
+                  <h3 class="timeline-title mb-1">M.Tech – Computer Science & Engineering</h3>
+                  <h5 class="timeline-institution text-white-75 mb-3">
+                    <i class="fas fa-university me-2 text-accent"></i>Wainganga College of Engineering & Management, Nagpur
+                  </h5>
+                  <p class="timeline-text mb-0">
+                    Specializing in Advanced Web Architectures, Distributed Systems, Software Engineering Optimization, and Generative AI applications.
+                  </p>
+                </div>
+              </div>
+
+              <!-- B.E. -->
+              <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="glass-card p-4 p-md-5">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                    <span class="timeline-badge">2021 – 2025</span>
+                    <span class="timeline-status text-success"><i class="fas fa-circle-check me-1"></i> Completed</span>
+                  </div>
+                  <h3 class="timeline-title mb-1">B.E. – Information Technology</h3>
+                  <h5 class="timeline-institution text-white-75 mb-3">
+                    <i class="fas fa-graduation-cap me-2 text-accent"></i>Rashtrasant Tukdoji Maharaj Nagpur University
+                  </h5>
+                  <p class="timeline-text mb-0">
+                    Comprehensive four-year engineering curriculum covering Data Structures, Algorithms, Object-Oriented Software Design, Database Management Systems, and Web Technologies.
+                  </p>
+                </div>
+              </div>
+
+              <!-- HSC -->
+              <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="glass-card p-4 p-md-5">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                    <span class="timeline-badge">2020 – 2021</span>
+                    <span class="timeline-status text-success"><i class="fas fa-circle-check me-1"></i> Completed</span>
+                  </div>
+                  <h3 class="timeline-title mb-1">Higher Secondary Certificate (HSC - 12th)</h3>
+                  <h5 class="timeline-institution text-white-75 mb-2">
+                    <i class="fas fa-school me-2 text-accent"></i>Maharashtra State Board
+                  </h5>
+                  <p class="timeline-text mb-0">
+                    Major focus in Science and Mathematics, building strong analytical and quantitative foundations.
+                  </p>
+                </div>
+              </div>
+
+              <!-- SSC -->
+              <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="glass-card p-4 p-md-5">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                    <span class="timeline-badge">2018 – 2019</span>
+                    <span class="timeline-status text-success"><i class="fas fa-circle-check me-1"></i> Completed</span>
+                  </div>
+                  <h3 class="timeline-title mb-1">Secondary School Certificate (SSC - 10th)</h3>
+                  <h5 class="timeline-institution text-white-75 mb-2">
+                    <i class="fas fa-book me-2 text-accent"></i>Maharashtra State Board
+                  </h5>
+                  <p class="timeline-text mb-0">
+                    Completed secondary education with a solid academic foundation in core subjects and essential concepts.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. APPRECIATION & RECOGNITION SECTION -->
+    <section id="appreciation" class="portfolio-section">
+      <div class="container">
+        
+        <div class="section-header text-center mb-5">
+          <span class="section-subtitle">Institutional Honors</span>
+          <h2 class="section-title">Appreciation & Recognition</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- Institutional Letters & Certificates Showcase -->
+        <div class="row gy-4 mb-5">
+          
+          <!-- Appreciation 1: RCERT -->
+          <div class="col-lg-6">
+            <div class="glass-card appreciation-card p-4 h-100 d-flex flex-column">
+              <div class="appreciation-thumb-box mb-3">
+                <img src="assets/rcert.png" alt="RCERT Chandrapur Appreciation Letter" class="appreciation-thumb" loading="lazy">
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge-tag">Institutional Commendation</span>
+                <span class="text-white-50 small"><i class="fas fa-calendar-alt me-1"></i> 2025</span>
+              </div>
+              <h4 class="h5 text-white mb-2">Institutional Recognition — RCERT Chandrapur</h4>
+              <p class="text-accent small mb-2"><i class="fas fa-university me-1"></i> Rajiv Gandhi College of Engineering Research & Technology</p>
+              <p class="text-white-75 small flex-grow-1">
+                Official letter of commendation from the Department of Computer Technology recognizing technical contributions in Python programming and Machine Learning.
+              </p>
+              <div class="d-flex flex-wrap gap-2 pt-3 border-top border-white-10">
+                <span class="skill-tag-sm">Python</span>
+                <span class="skill-tag-sm">Machine Learning</span>
+                <span class="skill-tag-sm">Institutional Honor</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appreciation 2: SCE -->
+          <div class="col-lg-6">
+            <div class="glass-card appreciation-card p-4 h-100 d-flex flex-column">
+              <div class="appreciation-thumb-box mb-3">
+                <img src="assets/sce.jpg" alt="SCE&T Generative AI Resource Person" class="appreciation-thumb" loading="lazy">
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge-tag">Institutional Recognition</span>
+                <span class="text-white-50 small"><i class="fas fa-calendar-alt me-1"></i> Jan 2025</span>
+              </div>
+              <h4 class="h5 text-white mb-2">Generative AI Commendation — SCE&T Nagpur</h4>
+              <p class="text-accent small mb-2"><i class="fas fa-university me-1"></i> Suryodaya College of Engineering & Technology</p>
+              <p class="text-white-75 small flex-grow-1">
+                Official Letter of Appreciation from the Department of Computer Engineering & IT for technical contributions and demonstrations in the 1-Week Short Term Training Program on Generative AI.
+              </p>
+              <div class="d-flex flex-wrap gap-2 pt-3 border-top border-white-10">
+                <span class="skill-tag-sm">Generative AI</span>
+                <span class="skill-tag-sm">Gen AI STTP</span>
+                <span class="skill-tag-sm">Engineering Honor</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Recognition Milestone Cards -->
+        <div class="row gy-4">
+          
+          <!-- Achievement 1: SCE&T -->
+          <div class="col-md-6 col-lg-3">
+            <div class="glass-card achievement-card p-4 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="glass-icon-box">
+                  <i class="fas fa-award"></i>
+                </div>
+                <span class="achievement-badge">Institutional</span>
+              </div>
+              <h4 class="card-title h6 mb-2">Generative AI STTP Commendation</h4>
+              <p class="text-accent small mb-2">Suryodaya College of Engg & Tech (2025)</p>
+              <p class="text-white-75 small flex-grow-1">
+                Formally commended by the Department of Computer Engineering & IT for technical demonstrations during the 1-week Short Term Training Program on Generative AI.
+              </p>
+              <div class="pt-2 border-top border-white-10">
+                <span class="text-white-50 small"><i class="fas fa-check-circle text-accent me-1"></i> Verified Honor</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement 2: RCERT -->
+          <div class="col-md-6 col-lg-3">
+            <div class="glass-card achievement-card p-4 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="glass-icon-box">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <span class="achievement-badge">Technical</span>
+              </div>
+              <h4 class="card-title h6 mb-2">Python & Machine Learning Appreciation</h4>
+              <p class="text-accent small mb-2">RCERT Chandrapur (2025)</p>
+              <p class="text-white-75 small flex-grow-1">
+                Appreciated by the Department of Computer Technology for technical contributions in Python programming, Machine Learning concepts, and practical software development.
+              </p>
+              <div class="pt-2 border-top border-white-10">
+                <span class="text-white-50 small"><i class="fas fa-check-circle text-accent me-1"></i> Appreciation Recognition</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement 3: Engineering Degree -->
+          <div class="col-md-6 col-lg-3">
+            <div class="glass-card achievement-card p-4 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="glass-icon-box">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="achievement-badge">Academics</span>
+              </div>
+              <h4 class="card-title h6 mb-2">B.E. in Information Technology</h4>
+              <p class="text-accent small mb-2">RTM Nagpur University (2021 – 2025)</p>
+              <p class="text-white-75 small flex-grow-1">
+                Completed a four-year engineering degree building core proficiencies in data structures, algorithms, database architectures, and software engineering.
+              </p>
+              <div class="pt-2 border-top border-white-10">
+                <span class="text-white-50 small"><i class="fas fa-check-circle text-accent me-1"></i> Degree Milestone</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement 4: Technical Impact -->
+          <div class="col-md-6 col-lg-3">
+            <div class="glass-card achievement-card p-4 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="glass-icon-box">
+                  <i class="fas fa-code-compare"></i>
+                </div>
+                <span class="achievement-badge">Engineering</span>
+              </div>
+              <h4 class="card-title h6 mb-2">Technical Distinction & Excellence</h4>
+              <p class="text-accent small mb-2">Collegiate Technology Programs (2025)</p>
+              <p class="text-white-75 small flex-grow-1">
+                Recognized for technical excellence, hands-on software demonstrations, and code architecture walkthroughs across collegiate technology events.
+              </p>
+              <div class="pt-2 border-top border-white-10">
+                <span class="text-white-50 small"><i class="fas fa-check-circle text-accent me-1"></i> Technical Distinction</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 9. CONTACT SECTION -->
+    <section id="contact" class="portfolio-section">
+      <div class="container">
+        
+        <div class="section-header text-center mb-5">
+          <span class="section-subtitle">Start A Conversation</span>
+          <h2 class="section-title">Contact Me</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row gy-4">
+          
+          <!-- Left: Contact Information Cards -->
+          <div class="col-lg-5">
+            <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column">
+              <h3 class="card-title mb-2">Let's Connect</h3>
+              <p class="about-text mb-4">
+                Have an exciting project, a software engineering opportunity, or looking for a dedicated developer in Python, Django, Gen AI, or Java? Feel free to reach out anytime.
+              </p>
+
+              <div class="d-flex flex-column gap-3 mb-4 flex-grow-1">
+                
+                <a href="mailto:tushargajbhiye79@gmail.com" class="contact-channel-card d-flex align-items-center gap-3">
+                  <div class="glass-icon-box">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <span class="channel-label">Email Me</span>
+                    <span class="channel-val text-break">tushargajbhiye79@gmail.com</span>
+                  </div>
+                </a>
+
+                <a href="tel:+918767914518" class="contact-channel-card d-flex align-items-center gap-3">
+                  <div class="glass-icon-box">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div>
+                    <span class="channel-label">Call / WhatsApp</span>
+                    <span class="channel-val">+91 87679 14518</span>
+                  </div>
+                </a>
+
+                <div class="contact-channel-card d-flex align-items-center gap-3">
+                  <div class="glass-icon-box">
+                    <i class="fas fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <span class="channel-label">Location</span>
+                    <span class="channel-val">Nagpur, Maharashtra, India</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Social Links Box -->
+              <div class="pt-3 border-top border-white-10">
+                <span class="d-block text-white-50 small mb-2">Connect Across Social Channels:</span>
+                <div class="d-flex gap-2">
+                  <a href="https://github.com/TusharGabhiye" target="_blank" class="glass-social-link" title="GitHub" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/tushar-gajbhiye-543745284/" target="_blank" class="glass-social-link" title="LinkedIn" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://www.instagram.com/tushar_gajbhiye___/" target="_blank" class="glass-social-link" title="Instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://www.facebook.com/tushar.gajbhiye.969/" target="_blank" class="glass-social-link" title="Facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="col-lg-7">
+            <div class="glass-card p-4 p-md-5 h-100">
+              <h3 class="card-title mb-2">Send a Message</h3>
+              <p class="about-text mb-4">Fill out the form below and I will get back to you promptly.</p>
+
+              <form id="contactForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="userName" class="glass-label">Your Name <span class="text-accent">*</span></label>
+                      <input type="text" class="form-control glass-input" id="userName" required>
+                      <div class="invalid-feedback">Please provide your name.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="userEmail" class="glass-label">Your Email <span class="text-accent">*</span></label>
+                      <input type="email" class="form-control glass-input" id="userEmail"  required>
+                      <div class="invalid-feedback">Please provide a valid email address.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="subject" class="glass-label">Subject</label>
+                      <input type="text" class="form-control glass-input" id="subject" placeholder="Project Inquiry / Engineering Opportunity" required>
+                      <div class="invalid-feedback">Please enter a subject.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="message" class="glass-label">Your Message <span class="text-accent">*</span></label>
+                      <textarea class="form-control glass-input" id="message" rows="5" placeholder="Share your message, project requirements, or opportunity..." required></textarea>
+                      <div class="invalid-feedback">Please enter your message.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" id="submitBtn" class="btn btn-glass-primary w-100 py-3 mt-2">
+                      <i class="fas fa-paper-plane me-2"></i>
+                      <span>Send Message</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- Feedback Alert Box -->
+              <div id="formAlert" class="glass-card p-3 mt-3 d-none text-center" role="alert">
+                <i class="fas fa-circle-check text-success me-2"></i>
+                <span id="formAlertText">Thank you! Your message has been sent successfully.</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="glass-footer py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <div class="footer-brand d-flex align-items-center gap-2">
+        <span class="brand-badge-sm">TG</span>
+        <span class="text-white-75 small">Designed & Developed by <strong>Tushar Gajbhiye</strong> &copy; 2026</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="#home" class="btn btn-glass-icon" title="Back to Top" aria-label="Back to Top">
+          <i class="fas fa-chevron-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Canvas Image Sequence Background & Interactive Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
